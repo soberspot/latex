@@ -1,0 +1,165 @@
+\renewcommand{\chaptername}{Заключение эксперта}
+\renewcommand{\refname}{Список}
+\renewcommand{\bibname}{\large {Использованные нормативы и источники информации}}
+
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%  Подсчет строк в таблице
+\newcounter{rownum}
+\setcounter{rownum}{0}
+\newcommand{\Rownum}{\stepcounter{rownum}%
+\arabic{rownum}}
+			
+
+%\def\contentsname{Содержание}
+%Аннотация  \abstractname
+%Часть       \partname
+%Глава        \chaptername
+%Список литературы  \refname
+%Рис.                \figurename
+%Таблица           \tablename
+%Литература       \bibname
+
+%Предметный указатель  \indexname
+%Приложение                \appendixname
+%Содержание          \contentsname
+%Список иллюстраций \listfigurename
+%Список таблиц        \listtablename
+%\addto\captionsrussian{\def\refname{Список используемой литературы}}
+
+%%%%%%%%%%%%%%   Размещение изображений
+%\textfloatsep — расстояние между флоатс (в верхней или нижней части страницы) и текстом (по умолчанию, около 20pt)
+%\floatsep — вертикальное расстояние между двумя флоатс (около 12pt)
+%\intextsep — расстояние между флоатс вставленным "прямо здесь" (параметр h) и текстом (около 12pt)
+%\abovecaptionskip и \belowcaptionskip — расстояние над и под подписью к флоат
+\setcounter{totalnumber}{10}
+\setcounter{topnumber}{10}
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0}
+%%%%%%  Больше плавающих объектов на страницу
+ \setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+ \setlength{\floatsep}{5pt plus 1.0pt minus 1.0pt}
+ \setlength{\intextsep}{5pt plus 1.0pt minus 1.0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Заметка на полях  (ремарка)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rem}[1]
+{
+\marginpar{\scriptsize\textcolor{red}{#1}}
+}
+\newcommand{\рем}[1]
+{
+	\marginpar{\scriptsize\textcolor{red}{#1}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ПЕРЕОПРЕДЕЛЕНИЕ ФОРМАТИРОВАНИЯ ЯЧЕЕК ТАБЛИЦЫ%%%%%%%%%%
+%
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}   %  \centering   \raggedleft  \raggedright
+\newcolumntype{M}[1]{>{\raggedright\arraybackslash}m{#1}} %
+\newcolumntype{G}[1]{>{\centering\arraybackslash}m{#1}} %
+
+%%%%%%%%%%%% ВСАВКА с масштабированием ИЗОБРАЖЕНИЯ 2х3  В ТАБЛИЦУ 
+\newcommand{\imt}[1]
+{\includegraphics[width=30mm, height=20mm, keepaspectratio=false]{#1}}
+
+%%%% Переопределение команды для вставки изображения
+%  Её вызов — \imgh{45.25mm}{zb}{Пример}
+%  Первый параметр — ширина
+%  Второй параметр — название файла
+%  Третий параметр — название подписи к изображению
+
+\newcommand{\imgh}[3]
+{
+	\begin{figure}[hpt!]
+		\center{\includegraphics[width=#1]{#2}}
+		\caption{\small {#3}}
+		\label{ris:#2}
+	\end{figure}
+}
+
+\newcommand{\imgroot}[4]
+{
+	\begin{figure}[hpt!]
+		\center{\includegraphics[angle=#4,width=#1]{#2}}
+		\caption{\small {#3}}
+		\label{ris:#2}
+	\end{figure}
+}
+
+%%Собственный  простейший список без нумерации и с обычными межстрочными интервалами
+\newenvironment{compactlist}{
+	\begin{list}{{$\bullet$}}{
+			\setlength\partopsep{0pt}
+			\setlength\parskip{0pt}
+			\setlength\parsep{0pt}
+			\setlength\topsep{0pt}
+			\setlength\itemsep{0pt}
+		
+		}
+	}
+{
+		\end{list}
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\newcommand{\dee}{
+	% вертикальные промежутки:
+	\topsep=0pt % вокруг списка
+	\parsep=0pt % между абзацами
+	\itemsep=0pt % между пунктами % горизонтальные промежутки: \itemindent=0pt % абзацный выступ
+	\labelsep=1ex % расстояние до метки
+	\leftmargin=\parindent % отступ слева
+	\rightmargin=0pt} % отступ справа
+%%
+
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\цитата}[1]
+{ 
+	\begin{quote} 
+		\textcolor{gray}{#1} 
+	\end{quote} 
+}
+
+\newcommand{\икс}{$x$}
+\newcommand{\игрек}{$y$}
+\newcommand{\зет}{$z$}
+%\newcommand{\auda}{Audatex AudaWeb, в модуле ОСАГО ПРО}
+\newcommand{\auda}{Audatex AudaWeb}
+
+%%%% Стиль для колонтитулов
+
+\newcommand{\грз}{\grz}
+\newcommand{\вин}{\vin}
+\newcommand{\датадтп}{\datadtp}
+\newcommand{\датадоговора}{\dog}
+\newcommand{\начато}{\datastart}
+\newcommand{\датаосмотра}{\osm}
+\newcommand{\датазаключения}{\zkl}
+\newcommand{\страховойполис}{\polis}
+\newcommand{\протокол}{\pr}
+\newcommand{\повреждения}{\pov}
+\newcommand{\иск}{\isk}
+\newcommand{\тс}{\tc}
+\newcommand{\окончено}{\dataend}
+%\newcommand{}{}
+%\newcommand{}{}
+%\newcommand{}{}
+%\newcommand{}{}
+%\newcommand{}{}
+%\newcommand{}{}
+%\newcommand{}{}

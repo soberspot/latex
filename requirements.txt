@@ -1,0 +1,7 @@
+pysimplegui
+pandas
+seaborn
+matplotlib
+openpyxl
+pillo
+remi
