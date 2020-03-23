@@ -13,7 +13,7 @@
 \hyphenpenalty=10000
 \emergencystretch=3em
 \usepackage{cmap}
-
+\usepackage{indentfirst} 
 %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,7 +22,7 @@
 \ifxetex % for xetex
 %\usepackage[no-math]{fontspec}
 %\usepackage{xltxtra}
-\usepackage{polyglossia}
+\usepackage{polyglossia}[indentfirst=true]
 \setdefaultlanguage[spelling=modern]{russian}
 \setotherlanguage{english}
 \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
@@ -41,7 +41,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\usepackage{indentfirst}
 \usepackage{subfigure}
 \usepackage{url}
 \usepackage[dvips]{graphicx}  % Для вставки рисунков
@@ -135,3 +134,4 @@
     {./images/pdf/}
     {./images/png/}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
