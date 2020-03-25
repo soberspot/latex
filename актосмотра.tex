@@ -1,62 +1,71 @@
-%ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
-%%
-%\csvautotabular{remont.csv}
-%%
+
+\documentclass[a4paper,10pt]{report}
+\usepackage{style/stylefile}
+
+
+\setmainfont[Ligatures={TeX,Historic}]{Arial}
+
+
+\begin{document}
+    
+\input{data}
+\input{pereopr}
+%_____________________________________________________
 %
-%	
-%\csvreader[tabular=|M{4mm}|M{160mm}|, table head=%
-%\hline n/n & Наименование детали и описание повреждений\\\hline\hline,
-%late after line=\\\hline]%
-%%
-%{remont.csv}{1=\Name, 2=\Variant}%
-%%
-%{\thecsvrow & \Name \,--\,\Variant}%
 
-%\caption{}
+\begin{center}
+    {\Large \textbf{АКТ ОСМОТРА ТРАНСПОРТНОГО СРЕДСТВА}}
+\end{center}
 
 
 
-%Прямое присвоения макросов столбцам - использовать арабские числа для назначения:
-	
-%\csvreader[tabular=|M{4mm}|M{100mm}|M{10mm}|M{10mm}|M{10mm}|M{10mm}|,
-%table head=%
-%\hline n/n & Наименование детали и описание повреждений& Ремонтное воздействие & E & I & L \\\hline\hline,
-%late after line=\\\hline]%
-%%
-%{remont.csv}{1=\Name, 2=\Variant, 3=\Typerepeare, 4=\E, 5=\I, 6=\L}%
-%%
-%{\thecsvrow & \Name \,--\,\Variant& \Typerepeare & \E & \I & \L}%
-%
-%	\caption{}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
+\begin{longtable}{G{3mm}|M{126mm}|G{8mm}|G{8mm}|G{8mm}}
+     \hline %установленные при его осмотре и соответствующие им ремонтные воздействия}}
+     %%\label{tab:5}\\
+    \hline
+    \toprule 
+    \bf  {\footnotesize  n/n}  &\bf {\small Наименование  детали и описание повреждения} & \bf {\small E} & \bf {\small I}& \bf {\small L}\\\hline\hline   \toprule  \endhead 
+%%%%______________________________________%%%%%%%%%%%%
+%%%%%%%%%   ОПИСАНИЕ ПОВРЕЖДЕНИЙ   
+%\\ps{ деталь }{E}{I}{L} 
+   
+    \ps{ }{ }{ }{ }
+    \ps{ }{ }{ }{ }
+    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+%    \ps{ }{ }{ }{ }
+  \end{longtable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%% ПРОСТАЯ ТАБЛИЦА ПОВРЕЖДЕНИЙ
 
-{\small \begin{table}[]
-\begin{longtable}{@{}ll@{}}
-	\caption[]{\footnotesize {\textbf{Описание повреждений деталей}}} \label{tab:4}\\ 
-		\toprule
-	\textbf{	Наименование детали       }               &\textbf{ Описание повреждений}                         \\ \midrule
-		Решетка бампера переднего средняя        & разбита                                      \\
-		Решетка бампера левая                    & оборваны, деформированы крепежные кронштейны \\
-		%.................................
-		Заднее правое крыло                      & несложная деформация, повреждение ЛКП        \\ \bottomrule
-	\end{longtable}
-\end{table}}
 
-%%%%%%%%%%%%%%%%% ПРОСТАЯ ТАБЛИЦА РЕМОНТНЫХ ВОЗДЕЙСТВИЙ
-
-{\small \begin{table}
-	\begin{longtable}{@{}ll@{}}
-	\caption[]{\footnotesize {\textbf{Назначенные ремонтные воздействия}}} \label{tab:2}\\ 
-	\toprule
-\textbf{Наименование детали}                      & \textbf{Ремонтные воздействия}\\ \midrule
-Решетка бампера переднего средняя        & заменить             \\
-%......................
-Заднее правое крыло                      & ремонт 3 ч, окрасить \\ \bottomrule
-\end{longtable}
-
-\end{table}}
-
+\end{document}
