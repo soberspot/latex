@@ -1,11 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesPackage{stylefile}
 
-
 \usepackage{fontspec}   % если не заработает, удалить
+
 \usepackage{csvsimple}
 \usepackage{ragged2e}
 \usepackage{microtype}
+
 
 \justifying
 \sloppy
@@ -31,6 +32,7 @@
 \setmonofont[Scale=.8]{Courier New}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic,Scale=.85]{Arial}
 \else 
+\usepackage[warn]{mathtext}	
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
@@ -41,10 +43,18 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+%
+\usepackage{csquotes}
+%
+%
+
+%
+%
+%
 \usepackage{subfigure}
 \usepackage{url}
 \usepackage[dvips]{graphicx}  % Для вставки рисунков
-\graphicspath{{images/}}  % папки с картинками
+\graphicspath{images/}  % папки с картинками
 \usepackage[leftcaption]{sidecap}
 %%% Работа с таблицами
 \usepackage{array,tabularx,tabulary,booktabs,longtable} % Дополнительная работа с таблицами
@@ -57,6 +67,7 @@
 \usepackage{python}
 %
 \usepackage{etoolbox} % логические операторы
+%\usepackage{csquotes} % кавычки
 %
 \usepackage{geometry} % Простой способ задавать поля
 \geometry{top=20mm}
@@ -69,7 +80,7 @@
 \setstretch{1.25}
 %
 % Гиперссылки
-\usepackage{hyperref}
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,bookmarksnumbered=false,bookmarksopen=false, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]{hyperref}
 %
 % Цвет гиперссылок
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
@@ -79,11 +90,11 @@
 \hypersetup{			              % Гиперссылки
 	unicode=true,                     % русские буквы в раздела PDF
 	pdfstartview=FitH,
-	pdftitle={Заключение эксперта},   % Заголовок
-	pdfauthor={Мраморнов А.},         % Автор
-	pdfsubject={НТЭ},                 % Тема
-%	pdfcreator={Создатель},           % Создатель
-%	pdfproducer={Производитель},      % Производитель
+	pdftitle={Экспертное исследование},   % Заголовок
+	pdfauthor={Мраморнов Александр},         % Автор
+	pdfsubject={Автотехника},                 % Тема
+	pdfcreator={ЮРЕКСгрупп},           % Приложение
+	pdfproducer={ИП Мраморнов А.В.},      % Создатель PDF
 	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
 	linkcolor=black,        % внутренние ссылки
 	citecolor=black,        % на библиографию
@@ -92,7 +103,12 @@
 }
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%###################%%%%%%%%%%%%%%%%%%
-\usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+\usepackage[
+backend=biber, 
+sorting=nyt,
+bibstyle=gost-authoryear,
+citestyle=gost-authoryear
+]{biblatex}
 %
 \usepackage{multicol} % Несколько колонок
 % Устанавивам размер отступа абзаца
@@ -135,3 +151,14 @@
     {./images/png/}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{marginnote}
+\usepackage{emptypage}
+\usepackage{todonotes}
+%\usepackage{layouts}
+\usepackage{lastpage}
+
+
+
+
+
+

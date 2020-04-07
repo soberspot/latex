@@ -36,6 +36,17 @@
 		\vrule\hspace{.8em}\parbox{1\textwidth}% 
 		{Иногда используется следующий способ выделения текста: абзац набирается с некоторым отступом от левого поля, а слева от него, вровень с левым полем, печатается вертикальная линейка.}} 
 \end{flushleft}
+\begin{flushleft} 
+    \hbox{
+        \vrule\hspace{.8em}\parbox{0.5\textwidth}
+        {Иногда используется следующий способ выделения текста: абзац набирается с некоторым отступом от левого поля, а слева от него, вровень с левым полем, печатается вертикальная линейка.}} 
+\end{flushleft}
+
+\begin{flushright} 
+    \hbox{
+        \vrule\hspace{.8em}\parbox{0.5\textwidth}
+        {Иногда используется следующий способ выделения текста: абзац набирается с некоторым отступом от левого поля, а слева от него, вровень с левым полем, печатается вертикальная линейка.}} 
+\end{flushright}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,15 +55,15 @@
 \begin{figure}[h!]\centering
 	\parbox[t]{0.49\textwidth}
 	{\centering
-		\includegraphics[width=.49\textwidth]{images/1}
+		\includegraphics[width=.49\textwidth, height=26mm]{images/1}
 		\caption{\footnotesize {Этапы реконструкции ДТП}}
 		\label{ris:images/1}}
 	\hfil \hfil%раздвигаем боксы по горизонтали 
 	\parbox[t]{0.49\textwidth}
 	{\centering
-		\includegraphics[width=.49\textwidth]{images/39}
+		\includegraphics[width=.49\textwidth,height=26mm]{images/2}
 		\caption{\footnotesize {Этапы реконструкции ДТП}}
-		\label{ris:images/39}}
+		\label{ris:images/2}}
 \end{figure}
 
 
@@ -62,7 +73,7 @@
 
 \begin{SCfigure}
 	\centering {\footnotesize \caption{Схематичное изображение перераспределения веса автомобиля при торможении  под действием силы $ \vec{F_t}  $ }} 
-	\includegraphics[width = 0.6 \textwidth]{images/torm}
+	\includegraphics[width = 0.6 \textwidth]{images/1}
 	\label{ris:images/tormoz}
 \end{SCfigure}
 
@@ -81,22 +92,33 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% История автомобиля
+% История ремонта и сервисного обслуживания 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\small 
-	\begin{longtable}{|p{16mm}|p{12mm}|p{29mm}|p{50mm}|p{41mm}|}
-		\caption[]{\footnotesize {\textbf{История ремонта и сервисного обслуживания по дате и пробегу}}} \label{tab:hist}\\
-		\hline
-		%\rowcolor[HTML]{C0C0C0} 
-		% Заголовки столбцов
-		\textbf{Дата} &\textbf{Пробег, км} &\textbf{№\,Заказ-наряда, накладной}& \textbf{Вид работы}& \textbf{Примечание} \\ \hline \endhead % повторение заголовка 
-		% Строки
-		22.22.2019 &33\,000  & № 480279303-1 от 03.09.2019& Панель задка  & Замена, окраска \\ \hline
-		%\rowcolor[HTML]{EFEFEF} 
-		\Rownum & &n & Боковина задняя левая   & Замена, окраска \\ \hline
-		%%% ..............& 
-	 % Обнуляем счетчик строк для следующей таблицы
-	\end{longtable}}\setcounter{rownum}{0}
+    \begin{longtable}{|p{16mm}|p{12mm}|p{29mm}|p{50mm}|p{41mm}|}
+        \caption[]{\footnotesize {\textbf{История ремонта и сервисного обслуживания по дате и пробегу}}} \label{tab:hist}\\\hline\hline
+        %%------------------------------------
+        \toprule\textbf{Дата} &\textbf{Пробег, км} &\textbf{№\,Акта,Заказ-наряда, накладной}& \textbf{Вид работы}& \textbf{Примечание}\\\hline \toprule \endhead 
+        %%-----------------------------------
+        %%%%	% Строки
+        %
+        %27.04.2018 & 5  & Заказ-наряд № 480261860-1 & Предпродажная подготовка  &  прим. \\ \hline
+        %
+        \ист{27.04.2018}{5000}{№ 7643}{расточка блока цилиндров}{просто так}
+        \ист{27.04.2018}{5000}{№ 7643}{расточка блока цилиндров}{просто так}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\ист{arg1}{arg2}{arg3}{arg4}{arg5}
+        %
+        %
+\end{longtable}}\setcounter{rownum}{0}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Длинная таблица
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,9 +143,9 @@
 	\rowcolor[HTML]{C0C0C0} 
 	\bf	\text{n/n} &\bf  Описание аналога & \bf URL-адрес преложения  \\ \hline \endhead
 	\toprule \centering
-	\Rownum  &\includegraphics[width=0.99\linewidth]{A_1} &\noindent {\scriptsize\ https://krasnodar.drom.ru/mazda/mazda6/34943451} \\ \hline \toprule	\centering
+	\Rownum  &\includegraphics[width=0.99\linewidth]{foto/1} &\noindent {\scriptsize\ https://krasnodar.drom.ru/mazda/mazda6/34943451} \\ \hline \toprule	\centering
 	%	\rowcolor[HTML]{EFEFEF} 
-	\Rownum  &\includegraphics[width=0.99\linewidth]{A_2} & {\noindent \centering  \scriptsize\ https://krasnodar.drom.ru/mazda/mazda6/34943451} \\ \hline \toprule	\centering
+	\Rownum  &\includegraphics[width=0.99\linewidth]{foto/2} & {\noindent \centering  \scriptsize\ https://krasnodar.drom.ru/mazda/mazda6/34943451} \\ \hline \toprule	\centering
 	
 \end{longtable}
 
@@ -196,12 +218,12 @@
      %    \Rownum  & {\small Дверь передняя правая -   деформация детали особой сложности на площади > 30 дм2 -- заменить, окрасить }&  \imt{foto/9}\\ \hline \toprule
      
      
-     \pz{дверь передняя правая}{1}
-%      \pz{дверь передняя правая}{9}
-%       \pz{дверь передняя правая}{9}
-%        \pz{дверь передняя правая}{9}
-%         \pz{дверь передняя правая}{9}
-%          \pz{дверь передняя правая}{9}
+     \пов{дверь передняя правая}{1}
+%     \пов{дверь передняя правая}{9}
+%      \пов{дверь передняя правая}{9}
+%        \пов{дверь передняя правая}{9}
+%         \пов{дверь передняя правая}{9}
+%          \пов{дверь передняя правая}{9}
 %     
  \end{longtable}
 
@@ -328,3 +350,38 @@
  	%	17   & Клапан (16 шт.)       & 1150     & 18400      \\ \hline& 
  		\end{tabular}
 \end{table}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%     ТАБЛИЦА  ИСТОРИИ РЕМОНТА И СЕРВИСНОГО ОБСЛУЖИВАНИЯ
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+Таблица \ref*{tab:hist}:
+
+{\small 
+    \begin{longtable}{|p{16mm}|p{12mm}|p{29mm}|p{50mm}|p{35mm}|}
+        \caption[]{\footnotesize {\textbf{История ремонта и сервисного обслуживания по дате и пробегу}}} \label{tab:hist}\\\hline\hline
+        %%------------------------------------
+        \toprule\textbf{Дата} &\textbf{Пробег, км} &\textbf{№\,Акта,Заказ-наряда, накладной}& \textbf{Вид работы}& \textbf{Примечание}\\\hline \toprule \endhead 
+        %%-----------------------------------
+        %%%%	% Строки
+        %
+        %27.04.2018 & 5  & Заказ-наряд № 480261860-1 & Предпродажная подготовка  &  прим. \\ \hline
+        %
+        \hs{27.04.2018}{5000}{№ 7643}{расточка блока цилиндров}{просто так}
+        \hs{27.04.2018}{5000}{№ 7643}{расточка блока цилиндров}{просто так}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %\hs{arg1}{arg2}{arg3}{arg4}{arg5}
+        %
+        %
+\end{longtable}}

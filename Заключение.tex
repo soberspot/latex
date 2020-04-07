@@ -1,39 +1,43 @@
 %% !TEX TS-program = xelatex
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[a4paper,12pt,english,notitlepage,twoside]{report}
+%\documentclass[a4paper,12pt,english,notitlepage,twoside]{report}
+\documentclass[a4paper,12pt,english,notitlepage]{report}
 %
 \usepackage{style/stylefile}  % СТИЛЕВОЙ ФАЙЛ
+
 %
 \begin{document}
 %	
 %\pagestyle{plain}
-\pagestyle{fancy}
+%\pagestyle{fancy}
+\frenchspacing 
 \fancyhf{}
 \fancyhead{}
 \fancyfoot{} 
-
+%
+%
 %\fancyhead[LE,RO]{\thepage} номер страницы слева сверху на четных и справа на нечетных
 %\fancyhead[CO]{текст-центр-нечетные}%текст-центр-нечетные
-\fancyhead[LE]{ } %текст-слева-нечетные
+\fancyhead[RE]{ } %текст-слева-нечетные
 \fancyhead{}
 %\fancyhead[CE]{текст-центр-четные} %текст-центр-четные
-\fancyhead[LO]{\small \NomerDoc} %текст-справа-четные
+\fancyhead[RO]{\small \NomerDoc} %текст-справа-четные
 \fancyhead[RE]{\small \NomerDoc} %текст-справа-четные
-
+%
 \fancyfoot[CE]{\thepage}% номер страницы слева снизу на четных и справа на нечетных
 \fancyfoot[CO]{\thepage}
 %\fancyfoot[RO]{}%текст-центр-нечетные
 %\fancyfoot[LO]{текст2-слева-четные} %текст2-слева-нечетные
 %\fancyfoot[CE]{\thepage} %текст-центр-четные
 %\fancyfoot[CO]{\thepage} %текст-справа-четные
-
+%
 \renewcommand{\headrulewidth}{0.1 mm}% толщина отделяющей полоски сверху
 \renewcommand{\footrulewidth}{0.1 mm}% толщина отделяющей полоски снизу
-
+%
 %L, C, R — лево, центр и право.
 %E, O — четные и нечетные страницы.
-
+%
 \thispagestyle{empty}  %  Не нумеровать первую страницу
 %
 \input{data}
@@ -41,20 +45,18 @@
 \input{pereopr}
 %
 %\input{sections/закл}
-
-%\input{sections/research}
+%
+\input{sections/исследованиеДВС}  
 %\input{sections/researchАлифриенко}
 %\input{sections/rezensia}
 %\input{sections/pod}
 %\input{sections/tit}
-
-
-\input{sections/ОСАГОстандарт}
-%\input{sections/nteOSAGO}        %%% Экспертное заключение ОСАГО
-%\input{sections/noOSAGOnoKACKO}   %%% Экспертное заключение не ОСАГО и не КАСКО
+%\input{sections/ОСАГОстандарт}
+%\input{sections/nteOSAGO}       
+%\input{sections/noOSAGOnoKACKO}   
 %\input{sections/противоправные}
 %\input{test}
 %\input{актосмотра}
 %\input{sections/износМЮt}
-%\input{sections/Памяткаt}
+%\input{блоки}
 \end{document} 
