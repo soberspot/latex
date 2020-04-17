@@ -186,7 +186,7 @@
 \newcommand{\прибл}{$ \approx $}
 \newcommand{\тса}{\tca}
 \newcommand{\тсб}{\tcb}
-%\newcommand{}{}
+\newcommand{\ссылка}{\ref}
 %\newcommand{}{}
 
 %%%%%%%%%%%%%%%% ПЕРЕОПРЕДЕЛЕНИЕ  "По вопросу"     \повопросу{вопрос}
@@ -198,7 +198,7 @@
 
 \newcommand{\фото}[2]
 {
-    \begin{figure}[hpt!]
+    \begin{figure}[H]
         \center{\includegraphics[width=0.99\textwidth]{foto/#1}}
         \caption{\small {#2}}
         \label{рис:#1}
@@ -223,6 +223,36 @@
 \end{figure}}
 
 
+%%%% СТС две стороны рядом
+\newcommand{\стс}[4]
+{\begin{figure}[H]
+        \centering
+        \parbox[t]{0.49\textwidth}
+        {\centering
+            \includegraphics[width=.49\textwidth]{foto/#1}
+            \caption{\footnotesize {#2}}
+            \label{рис:#1}}
+        \hfil \hfil
+        \parbox[t]{0.49\textwidth}
+        {\centering
+            \includegraphics[width=.49\textwidth]{foto/#3}
+            \caption{\footnotesize {#4}}
+            \label{рис:#3}}
+        
+\end{figure}}
+
+
+%%%%% ФОТО РЯДОМ С ТЕКСТОМ
+%
+%\newcommand{\фотосправа}[2]{
+%    \begin{SCfigure}
+%        \centering {\footnotesize \caption{#2} 
+%            \includegraphics[width = 0.6 \textwidth]{foto/#1}
+%            \label{рис:#1}
+%    \end{SCfigure}}
+
+
+
 %%%% Переопределение команды для 
 %  Её вызов — \фотомасштаб{45.25mm}{название файла}{подпись рисунка}
 
@@ -233,7 +263,7 @@
 {
     \begin{figure}[H]
         \center{\includegraphics[width=#3]{foto/#1}}
-        \caption{\small {#2}}
+        \caption{\small{#2}}
         \label{рис:#1}
     \end{figure}
 }
@@ -256,3 +286,5 @@
 %%% ИЗМЕРИТЬ ШИРИНУ СТРАНИЦЫ
 \newcommand{\ширина}{\the\textwidth\\
     \printinunitsof{mm}\prntlen{\textwidth}}
+
+
