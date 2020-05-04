@@ -1,8 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesPackage{stylefile}
 
-\usepackage{fontspec}   % если не заработает, удалить
-
+\usepackage{fontspec}   
 \usepackage{csvsimple}
 \usepackage{ragged2e}
 \usepackage{microtype}
@@ -39,7 +38,8 @@
 \fi
 \usepackage{mathtools}                    
 \usepackage{amsmath}
-\usepackage{unicode-math}   
+%\usepackage{unicode-math} 
+\usepackage{amssymb}  
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -51,7 +51,8 @@
 %
 %
 %
-\usepackage{subfigure}
+%\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage{url}
 \usepackage[dvips]{graphicx}  % Для вставки рисунков
 \graphicspath{images/}  % папки с картинками
@@ -61,6 +62,7 @@
 %
 \usepackage{multirow} % Слияние строк в таблице
 %
+
 %%%% Программирование
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,11 +81,12 @@
 % произвольный интервал
 \setstretch{1.25}
 %
-% Гиперссылки
-\usepackage[unicode=true, pdfusetitle, bookmarks=true,bookmarksnumbered=false,bookmarksopen=false, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]{hyperref}
+% Гиперссылки  %%  pagebackref = true  не  проверен
+\usepackage[unicode=true, pdfusetitle, pagebackref=true bookmarks=true,bookmarksnumbered=false,bookmarksopen=false, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]{hyperref}
 %
 % Цвет гиперссылок
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\usepackage{tcolorbox}
 %
 \definecolor{linkcolor}{HTML}{000099} % цвет ссылок
 \definecolor{urlcolor}{HTML}{0000FF}  % цвет гиперссылок
@@ -132,7 +135,7 @@ citestyle=gost-authoryear
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
-\usepackage{enumitem}
+\usepackage{enumitem}% , amssymb 
 \usepackage{qrcode}
 \usepackage{pstricks}
 \usepackage{pst-barcode}
@@ -149,6 +152,7 @@ citestyle=gost-authoryear
     {./images/jpg/}
     {./images/pdf/}
     {./images/png/}
+     {./foto/}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{marginnote}
@@ -156,6 +160,13 @@ citestyle=gost-authoryear
 \usepackage{todonotes}
 %\usepackage{layouts}
 \usepackage{lastpage}
+
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+
+%%%%%%%%%%%%  ВОДЯНОЙ ЗНАК
+\usepackage{draftwatermark} 
 
 
 
