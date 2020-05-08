@@ -19,7 +19,7 @@
 \setcounter{rownum}{0}
 \newcommand{\Rownum}{\stepcounter{rownum}%
 \arabic{rownum}}
-			
+
 %\def\contentsname{Содержание}
 %Аннотация  \abstractname
 %Часть       \partname
@@ -70,11 +70,11 @@
 \newcolumntype{M}[1]{>{\raggedright\arraybackslash}m{#1}} %
 \newcolumntype{G}[1]{>{\centering\arraybackslash}m{#1}} %
 
-%%%%%%%%%%%% ВСАВКА с масштабированием ИЗОБРАЖЕНИЯ 2х3  В ТАБЛИЦУ 
+%%%%%%%%%%%% ВСАВКА с масштабированием ИЗОБРАЖЕНИЯ 2х3  В ТАБЛИЦУ
 \newcommand{\imt}[1]
 {\includegraphics[width=35mm, height=23mm, keepaspectratio=false]{#1}}
 
-%%%% Переопределение команды для 
+%%%% Переопределение команды для
 %  Её вызов — \imgh{45.25mm}{zb}{Пример}
 %  Первый параметр — ширина
 %  Второй параметр — название файла
@@ -146,10 +146,10 @@
 
 %%%% Вставить цитату
 \newcommand{\цитата}[1]
-{ 
-	\begin{quote} 
-		\textcolor{gray}{#1} 
-	\end{quote} 
+{
+	\begin{quote}
+		\textcolor{gray}{#1}
+	\end{quote}
 }
 
 \newcommand{\блеклый}[1]
@@ -207,7 +207,7 @@
 %\newcommand{}{}
 
 %%%%%%%%%%%%%%%% ПЕРЕОПРЕДЕЛЕНИЕ  "По вопросу"     \повопросу{вопрос}
-\newcommand{\повопросу}[1]{\,{\renewcommand\baselinestretch{0.86}\small\normalsize 
+\newcommand{\повопросу}[1]{\,{\renewcommand\baselinestretch{0.86}\small\normalsize
 \subsection{\underline{По  вопросу}\,\,\textbf{\small{<<#1>>}}}}
 \renewcommand\baselinestretch{1.2}\small\normalsize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,7 +216,7 @@
 \newcommand{\фото}[2]
 {
     \begin{figure}[H]
-        \center{\includegraphics[width=0.99\textwidth]{foto/#1}}
+        \center{\includegraphics[width=0.99\textwidth]{example-imagie}}
         \caption{\small {#2}}
         \label{рис:#1}
     \end{figure}
@@ -236,7 +236,7 @@
             \includegraphics[width=.49\textwidth, height=.32\textwidth]{foto/#3}
             \caption{\footnotesize {#4}}
             \label{рис:#3}}
-        
+
 \end{figure}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -253,7 +253,7 @@
 		\includegraphics[width=\linewidth,  height=.64\linewidth]{foto/#3}
 		\subcaption{#4}
 	\end{minipage}
-	
+
 	\caption{#5}
 	\label{рис:#1}
 :\end{figure}}
@@ -275,7 +275,7 @@
             \includegraphics[width=.49\textwidth]{foto/#3}
             \caption{\footnotesize {#4}}
             \label{рис:#3}}
-        
+
 \end{figure}}
 
 
@@ -283,14 +283,14 @@
 %
 %\newcommand{\фотосправа}[2]{
 %    \begin{SCfigure}
-%        \centering {\footnotesize \caption{#2} 
+%        \centering {\footnotesize \caption{#2}
 %            \includegraphics[width = 0.6 \textwidth]{foto/#1}
 %            \label{рис:#1}
 %    \end{SCfigure}}
 
 
 
-%%%% Переопределение команды для 
+%%%% Переопределение команды для
 %  Её вызов — \фотомасштаб{45.25mm}{название файла}{подпись рисунка}
 
 %  Первый параметр — название файла
@@ -323,5 +323,3 @@
 %%% ИЗМЕРИТЬ ШИРИНУ СТРАНИЦЫ
 \newcommand{\ширина}{\the\textwidth\\
     \printinunitsof{mm}\prntlen{\textwidth}}
-
-
