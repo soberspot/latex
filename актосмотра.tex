@@ -1,8 +1,6 @@
 %%%%
 \documentclass[a4paper,10pt]{report}
-
 \usepackage{style/stylefile}
-
 
 \setmainfont[Ligatures={TeX,Historic}]{Arial}
 
@@ -15,7 +13,6 @@
 \SetWatermarkLightness{0.98} % прозрачность
 \SetWatermarkText{ЮРЭКСГРУП} % Текст водяного знака
 \SetWatermarkScale{0.8}  %масштаб
-
 
 \begin{document}
 	\pagestyle{plain}
@@ -41,8 +38,8 @@
 	\fancyhead[RO]{\small {Акт осмотра \NomerDoc}} %текст-справа-четные
 	\fancyhead[RE]{\small \NomerDoc} %текст-справа-четные
 	%
-	\fancyfoot[CE]{\thepage}% номер страницы слева снизу на четных и справа на нечетных
-	\fancyfoot[CO]{\thepage}
+	\fancyfoot[CE]{\thepage\,  / \pageref*{LastPage}}% номер страницы слева снизу на четных и справа на нечетных
+	\fancyfoot[CO]{\thepage\,  / \pageref*{LastPage}}
 	
 	\fancyfoot[R]{\textcolor{BurntOrange}{ИП Мраморнов А.В.}}
 	%\fancyfoot[RO]{}%текст-центр-нечетные
