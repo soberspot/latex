@@ -1,0 +1,81 @@
+%% !TEX TS-program = xelatex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[a4paper,12pt,english,notitlepage,twoside]{report}
+\documentclass[a4paper,12pt,english,notitlepage]{report}
+%
+\usepackage{style/stylefile}  % СТИЛЕВОЙ ФАЙЛ
+%
+%
+%%%%%%%%%%%%%%%%%%%  Водяной знак  %% пакет  \usepackage{draftwatermark}
+\SetWatermarkLightness{1} % прозрачность
+\SetWatermarkText{ЮРЭКСГРУП} % Текст водяного знака
+\SetWatermarkScale{0.8}  %масштаб
+
+\begin{document}
+%	
+\pagestyle{plain}
+\pagestyle{fancy}
+\frenchspacing 
+\fancyhf{}
+\fancyhead{}
+\fancyfoot{} 
+%
+%
+%
+%
+%\fancyhead[LE]{ }
+%\fancyhead{}
+%\fancyhead[LO, RE]{\footnotesize \textcolor{ForestGreen} {Акт экспертного исследования № \NomerDoc\, от \окончено}} 
+%
+%
+%\fancyhead[LE,RO]{\thepage} номер страницы слева сверху на четных и справа на нечетных
+%\fancyhead[CO]{текст-центр-нечетные}%текст-центр-нечетные
+\fancyhead[RE]{ } %текст-слева-нечетные
+\fancyhead{}
+%\fancyhead[CE]{текст-центр-четные} %текст-центр-четные
+\fancyhead[RO]{\small {Экспертное заключение № \NomerDoc}} %текст-справа-четные
+\fancyhead[RE]{\small \NomerDoc} %текст-справа-четные
+%
+\fancyfoot[CE]{\thepage}% номер страницы слева снизу на четных и справа на нечетных
+\fancyfoot[CO]{\thepage}
+
+\fancyfoot[R]{\textcolor{black}{{\footnotesize \textit{ИП Юркова Е.А.}}}}
+%\fancyfoot[RO]{}%текст-центр-нечетные
+%\fancyfoot[LO]{текст2-слева-четные} %текст2-слева-нечетные
+%\fancyfoot[CE]{\thepage} %текст-центр-четные
+%\fancyfoot[CO]{\thepage} %текст-справа-четные
+%
+\renewcommand{\headrulewidth}{0.5mm}% толщина отделяющей полоски сверху
+%%  Сделаем полоску цветной (красной)
+\renewcommand{\headrule}{\hbox to\headwidth{%
+		\color{red}\leaders\hrule height \headrulewidth\hfill}}
+
+\renewcommand{\footrulewidth}{0.5 mm}% толщина отделяющей полоски снизу
+\futurelet\TMPfootrule\def\footrule{{\color{red}\TMPfootrule}}
+%
+%L, C, R — лево, центр и право.
+%E, O — четные и нечетные страницы.
+%
+\thispagestyle{empty}  %  Не нумеровать первую страницу
+%
+\input{data}
+%
+\input{pereopr}
+%
+%\input{sections/закл}
+%
+%\input{sections/исследованиеДВС}  
+%\input{sections/исследованиеКПП} 
+%\input{sections/rezensia}
+%\input{sections/pod}
+%\input{sections/tit}
+%\input{sections/ОСАГОстандартФакт}
+%\input{sections/ОСАГОстандарт}
+%\input{sections/nteOSAGO}       
+%\input{sections/noOSAGOnoKACKO}   
+\input{sections/противоправныеФАКТ}
+%\input{test}
+%\input{sections/износМЮt}
+%\input{блоки}
+\end{document} 
