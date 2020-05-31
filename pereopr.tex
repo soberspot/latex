@@ -129,7 +129,12 @@
 
 \newcommand{\ист}[5]{#1 & #2  & #2 & #4   & #5 \\ \hline}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ПЕРЕОПРЕДЕЛЕНИЕ ДЛЯ ТАБЛИЦЫ с Игдексом и Двумя Столбцами
+
+\newcommand{\два}[2]{\small \Rownum  & {\small #1 }&  \small #2\\ \hline \toprule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\dee}{
 	% вертикальные промежутки:
 	\topsep=0pt % вокруг списка
@@ -216,12 +221,11 @@
 \newcommand{\фото}[2]
 {
     \begin{figure}[H]
-        \center{\includegraphics[width=0.99\textwidth]{example-imagie}}
+        \center{\includegraphics[width=0.99\textwidth]{#1}}
         \caption{\small {#2}}
         \label{рис:#1}
     \end{figure}
 }
-
 
 %%%%%%%%%%%%%%% ДВА РИСУНКА РЯДОМ            \дварядом{файл1}{подпись1}{файл2}{подпись2}
 \newcommand{\дварядом}[4]{\begin{figure}[H]\centering

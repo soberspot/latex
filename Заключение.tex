@@ -9,7 +9,7 @@
 %
 \begin{document}
 %	
-\sloppy  % если не заработает, удалить
+%\sloppy  % если не заработает, удалить
 %
 \pagestyle{plain}
 \pagestyle{fancy}
@@ -29,25 +29,28 @@
 \fancyhead[RE]{ } %текст-слева-нечетные
 \fancyhead{}
 %\fancyhead[CE]{текст-центр-четные} %текст-центр-четные
-\fancyhead[RO]{\small {Экспертное заключение \NomerDoc}} %текст-справа-четные
+\fancyhead[RO]{\small {Заключение эксперта \NomerDoc}} %текст-справа-четные
 \fancyhead[RE]{\small \NomerDoc} %текст-справа-четные
 %
+
+\fancyfoot[R]{\textcolor{black}{ \textit{{\small }} \rule{3cm}{0.1 mm}}}
+
 \fancyfoot[CE]{\thepage}% номер страницы слева снизу на четных и справа на нечетных
 \fancyfoot[CO]{\thepage}
 
-\fancyfoot[R]{\textcolor{red}{}}
+
 %\fancyfoot[RO]{}%текст-центр-нечетные
 %\fancyfoot[LO]{текст2-слева-четные} %текст2-слева-нечетные
 %\fancyfoot[CE]{\thepage} %текст-центр-четные
 %\fancyfoot[CO]{\thepage} %текст-справа-четные
 %
-\renewcommand{\headrulewidth}{0.5mm}% толщина отделяющей полоски сверху
+\renewcommand{\headrulewidth}{0 mm}% толщина отделяющей полоски сверху
 %%  Сделаем полоску цветной (красной)
 \renewcommand{\headrule}{\hbox to\headwidth{%
 		\color{red}\leaders\hrule height \headrulewidth\hfill}}
 
-\renewcommand{\footrulewidth}{0.5 mm}% толщина отделяющей полоски снизу
-\futurelet\TMPfootrule\def\footrule{{\color{red}\TMPfootrule}}
+\renewcommand{\footrulewidth}{0 mm}% толщина отделяющей полоски снизу
+\futurelet\TMPfootrule\def\footrule{{\color{black}\TMPfootrule}}
 %
 %L, C, R — лево, центр и право.
 %E, O — четные и нечетные страницы.
@@ -60,7 +63,8 @@
 %
 %\input{sections/закл}
 %
-\input{sections/исследованиеДВС}  
+%\input{sections/исследованиеДВС}  
+\input{sections/перерасчетсудебка}
 %\input{sections/исследованиеКПП} 
 %\input{sections/rezensia}
 %\input{sections/pod}
