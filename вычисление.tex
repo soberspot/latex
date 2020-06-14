@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{InsC@unt@r} 
+\def\Ind@x{\stepcounter{InsC@unt@r}% 
+	\hbox to 0pt{\raisebox{1ex}{\tiny\red{\arabic{InsC@unt@r}}}}} 
+\def\Insm@rgimp@r#1{\marginpar{\red{\tiny\arabic{InsC@unt@r}:#1}}} 
+\ifx\TextOut\undefined 
+\def\InsTxt@#1#2{#1\Ind@x\Insm@rgimp@r{#2}} 
+\else 
+\def\InsTxt@#1#2{#1} 
+\fi 
+\def\Ins{\futurelet\next\Ins@i} 
+\def\Ins@i{\ifx\next\bgroup\expandafter\Ins@ii\else\expandafter\Ins@end\fi} 
+\def\Ins@ii#1{\def\temp@rg{#1}\futurelet\next\Ins@iii} 
+\def\Ins@iii{\ifx\next\bgroup\expandafter\Ins@two@rgs% 
+	\else\expandafter\Ins@one@rg\fi} 
+\def\Ins@two@rgs#1{\InsWFP{\temp@rg}{#1}} % Два аргумента 
+\def\InsWFP#1#2{\expandafter\FPset\csname #1\endcsname{#2}\InsTxt@{#2}{#1}} 
+\def\Ins@one@rg{\InsTxt@{\temp@rg}{}} % Один аргумент
+\def\Ins@end{\red{\Square\Ind@x}\Insm@rgimp@r{?}\xspace} % Нет аргументов 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\FPrint#1{\@@print@@#1} 
+\def\@@print@@#1:#2{\FPeval{\res@lt}{round(#1:#2)}\res@lt} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Ini}[2][0]{\expandafter\gdef\csname cntr#2\endcsname{#1}} 
+\def\Add#1#2{\expandafter\FPeval\csname cntr#1\endcsname{cntr#1+(#2)}} 
+\def\Sub#1#2{\expandafter\FPeval\csname cntr#1\endcsname{cntr#1-(#2)}} 
+\newcommand{\Show}[2][2]{\FPrint{cntr#2:#1}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount\@row@num\@row@num=15 
+\def\@@nonum{} 
+\def\@shownum{\ifx\@@nonum\empty\global\advance\@row@num1 \the\@row@num\else 
+	\gdef\@@nonum{}\fi} 
+\def\NumIni{\global\@row@num=0\gdef\@@nonum{1}} 
+\def\NoNum{\gdef\@@nonum{1}} 
+\newcolumntype{N}[1]{>{\strut}#1<{\@shownum}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@@def@cmd#1#2#3{% 
+	\expandafter\xdef\csname #1\endcsname##1\ignorespaces{% 
+		\xdef\noexpand\@fst@rg{##1}\futurelet\noexpand\next\expandafter\noexpand\csname 
+		@@#1@\endcsname} 
+	\expandafter\xdef\csname @@#1@\endcsname{% 
+		\noexpand\ifx\noexpand\next\unskip\relax 
+		\noexpand\else\noexpand\expandafter\expandafter\noexpand\csname 
+		@testminus@#1\endcsname\noexpand\fi} 
+	\expandafter\xdef\csname @testminus@#1\endcsname{% 
+		\noexpand\ifx\noexpand\next-\noexpand\expandafter\expandafter\noexpand 
+		\csname @@m@#1\endcsname\noexpand\else 
+		\noexpand\expandafter\expandafter\noexpand 
+		\csname @@@#1\endcsname\noexpand\fi} 
+	\expandafter\xdef\csname @@@#1\endcsname##1 {% 
+		\noexpand\ifnum1=1##1{}\noexpand\else##1 \noexpand#2{##1}\noexpand\fi} 
+	\expandafter\xdef\csname @@m@#1\endcsname##1 {##1 \noexpand#2{##1}} 
+	\newcolumntype{#3}[2]{>{\csname #1\endcsname{##1}}##2} 
+} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@SET#1{\expandafter\xdef\csname cntr\@fst@rg\endcsname{#1}} 
+\def\@ADD#1{\FPeval{\res@lt}{cntr\@fst@rg+(#1)}\@SET{\res@lt}} 
+\def\@SUB#1{\FPeval{\res@lt}{cntr\@fst@rg-(#1)}\@SET{\res@lt}} 
+\def\@MUL#1{\FPeval{\res@lt}{cntr\@fst@rg*(#1)}\@SET{\res@lt}} 
+\def\@DIV#1{\FPeval{\res@lt}{cntr\@fst@rg/(#1)}\@SET{\res@lt}} 
+\@@def@cmd{TAdd}{\@ADD}{+} 
+\@@def@cmd{TSub}{\@SUB}{-} 
+\@@def@cmd{TMul}{\@MUL}{*} 
+\@@def@cmd{TDiv}{\@DIV}{/} 
+\@@def@cmd{TSet}{\@SET}{X} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@@plus#1#2{\gdef\@fst@rg{#1}\@ADD{cntr#2}} 
+\def\@Sho@@#1{\ifx\@@nonum\empty\@@plus{#1}{\temp@rg}\else\gdef\@@nonum{}\fi} 
+\def\@Sh@{\ifx\next\bgroup\expandafter\@Sho@@\else\gdef\@@nonum{}\fi} 
+\def\Sho#1{\ifx\@@nonum\empty\Show{#1}\fi\def\temp@rg{#1}\futurelet\next\@Sh@} 
+\newcolumntype{S}[3]{>{\strut}#3<{\Sho{#1}{#2}}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{f@rc@unter} 
+\newcommand{\forplus}[4][1]{% 
+	\setcounter{f@rc@unter}{#2}\ifthenelse{\value{f@rc@unter} < #3}{#4% 
+		\addtocounter{f@rc@unter}{#1}% 
+		\forplus[#1]{\value{f@rc@unter}}{#3}{#4}}{}} 
+\newcommand{\forminus}[4][-1]{% 
+	\setcounter{f@rc@unter}{#2}\ifthenelse{\value{f@rc@unter} > #3}{#4% 
+		\addtocounter{f@rc@unter}{#1}% 
+		\forminus[#1]{\value{f@rc@unter}}{#3}{#4}}{}} 
+\def\iterator{\arabic{f@rc@unter}} 
+\def\Loop#1#2{\forplus{0}{#1}{#2}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount\@buflen\@buflen=0 
+\newtoks\@@stack 
+\@@stack={\empty} 
+\def\push#1{\advance\@buflen1\begingroup\toks0={{#1}}% 
+	\edef\act{\endgroup\global\@@stack={\the\toks0 \the\@@stack}}\act} 
+\def\pop{\ifnum\@buflen>0\advance\@buflen-1\fi\begingroup% 
+	\edef\act{\endgroup\noexpand\splitList\the\@@stack(tail)\@@stack}\act} 
+\def\splitList#1#2(tail)#3{\ifx#1\empty\red{Стек пуст!}\else{#1}\global#3={#2}\fi} 
+\def\stacklen{\the\@buflen\xspace} 
+\def\popalldel#1{\ifthenelse{\the\@buflen > 1}{\pop#1\popalldel{#1}}% 
+	{\ifnum\@buflen=1\pop\fi}} 
+\def\popall{\popalldel{}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+

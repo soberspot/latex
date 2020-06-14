@@ -13,6 +13,14 @@
 \renewcommand{\geq}{\ensuremath{\geqslant}}
 \renewcommand{\emptyset}{\varnothing}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   ПРОИЗВОЛЬНЫЙ СЧЕТЧИК
+
+\newcounter{@nnn}  % задаём имя счёчика 
+\setcounter{@nnn}{0}  % устанавливаем его первое значение
+
+\newcommand{\z}[2]{\par\addtocounter{@nnn}{1}  % формируем комманду 
+	{\bf \arabic{@nnn}.   Работы по заказ-наряду  #1, призведеные на автомобиле #2:}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%  Подсчет строк в таблице
 \newcounter{rownum}
@@ -117,7 +125,7 @@
 %% ПЕРЕОПРЕДЕЛЕНИЕ ДЛЯ ЗАПИСИ СТРОКИ АКТА ОСМОТРА
 %%
 
-\newcommand{\акт}[4]{\Rownum  & \small{#1}& #2  & #3 & #4\\  \toprule}
+\newcommand{\акт}[4]{\Rownum  & {\small #1}& #2  & #3 & #4\\  \toprule}
 
 %%%%%%%%%%%%%%%
 %% Переопределение для ЗАКЛЮЧЕНИЯ. Таблица ввода повреждений  с фото
@@ -129,7 +137,16 @@
 
 \newcommand{\ист}[5]{#1 & #2  & #2 & #4   & #5 \\ \hline}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ПЕРЕОПРЕДЕЛЕНИЕ ДЛЯ ТАБЛИЦЫ с Игдексом и Двумя Столбцами
+
+\newcommand{\два}[2]{\small \Rownum  & {\small #1 }&  \small #2\\ \hline \toprule}
+
+%%% ПЕРЕОПРЕДЕЛЕНИЕ ДЛЯ ТАБЛИЦЫ с Индексом и Пятью Столбцами
+
+\newcommand{\пять}[5]{\small \Rownum  & \small #1 &  \small #2&\small #3&\small #4&\small #5\\ \hline \toprule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\dee}{
 	% вертикальные промежутки:
 	\topsep=0pt % вокруг списка
@@ -177,12 +194,12 @@
 \newcommand{\градус}{\circ}
 \newcommand{\чек}{$\square$}
 
-\newcommand{\чекг}{\done}
-\newcommand{\чекх}{\wontfix}
+\newcommand{\чекг}{\done}  %  чек-бокс с "галкой"
+\newcommand{\чекх}{\wontfix}  % чек-бокс с "х"
 
 
 % Площадь пореждений, М2
-\newcommand{\s}[1]{$S_{\text{повр}} \approx#1\, m^2$}
+\newcommand{\s}[1]{$S_{\text{повр}} $\approx$ #1\, m^2$}
 
 \newcommand{\угол}[1]{$ #1^\circ $}
 %%%% Стиль для колонтитулов
@@ -200,7 +217,7 @@
 \newcommand{\иск}{\isk}
 \newcommand{\тс}{\tc}
 \newcommand{\окончено}{\dataend}
-\newcommand{\прибл}{$ \approx $}
+\newcommand{\прибл}{$\approx$}
 \newcommand{\тса}{\tca}
 \newcommand{\тсб}{\tcb}
 \newcommand{\ссылка}{\ref}
@@ -216,12 +233,21 @@
 \newcommand{\фото}[2]
 {
     \begin{figure}[H]
-        \center{\includegraphics[width=0.99\textwidth]{foto/#1}}
+        \center{\includegraphics[width=0.99\textwidth]{#1}}
         \caption{\small {#2}}
         \label{рис:#1}
     \end{figure}
 }
 
+
+\newcommand{\фот}[2]
+{
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.99\textwidth]{#1}}
+		\caption{\small {#2}}
+	%	\label{рис:#1}
+	\end{figure}
+}
 
 %%%%%%%%%%%%%%% ДВА РИСУНКА РЯДОМ            \дварядом{файл1}{подпись1}{файл2}{подпись2}
 \newcommand{\дварядом}[4]{\begin{figure}[H]\centering
@@ -296,6 +322,8 @@
 %  Первый параметр — название файла
 %  Второй параметр — название подписи к изображению
 %  Третий параметр — ширина
+%
+%
 \newcommand{\фотомасштаб}[3]
 {
     \begin{figure}[H]
@@ -311,6 +339,8 @@
 %  Первый параметр — ширина
 %  Второй параметр — название файла
 %  Третий параметр — название подписи к изображению
+%
+%
 \newcommand{\фотоповорот}[4]
 {
     \begin{figure}[hpt!]
@@ -321,5 +351,6 @@
 }
 
 %%% ИЗМЕРИТЬ ШИРИНУ СТРАНИЦЫ
+%
 \newcommand{\ширина}{\the\textwidth\\
     \printinunitsof{mm}\prntlen{\textwidth}}

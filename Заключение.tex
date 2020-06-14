@@ -6,6 +6,14 @@
 %
 \usepackage{style/stylefile}  % СТИЛЕВОЙ ФАЙЛ
 %
+
+%\usepackage[margin=1in]{geometry}
+%
+\SetWatermarkLightness{0.98} % прозрачность
+\SetWatermarkText{ЮРЭКСГРУП} % Текст водяного знака
+\SetWatermarkScale{0.8}  %масштаб
+
+%
 %
 \begin{document}
 %	
@@ -35,7 +43,7 @@
 \fancyfoot[CE]{\thepage}% номер страницы слева снизу на четных и справа на нечетных
 \fancyfoot[CO]{\thepage\, / \pageref*{LastPage}}
 
-\fancyfoot[R]{\textcolor{red}{}}
+\fancyfoot[R]{\textcolor{black}{}}
 %\fancyfoot[RO]{}%текст-центр-нечетные
 %\fancyfoot[LO]{текст2-слева-четные} %текст2-слева-нечетные
 %\fancyfoot[CE]{\thepage} %текст-центр-четные
@@ -44,10 +52,10 @@
 \renewcommand{\headrulewidth}{0.5mm}% толщина отделяющей полоски сверху
 %%  Сделаем полоску цветной (красной)
 \renewcommand{\headrule}{\hbox to\headwidth{%
-		\color{red}\leaders\hrule height \headrulewidth\hfill}}
+		\color{black}\leaders\hrule height \headrulewidth\hfill}}
 
 \renewcommand{\footrulewidth}{0.5 mm}% толщина отделяющей полоски снизу
-\futurelet\TMPfootrule\def\footrule{{\color{red}\TMPfootrule}}
+\futurelet\TMPfootrule\def\footrule{{\color{black}\TMPfootrule}}
 %
 %L, C, R — лево, центр и право.
 %E, O — четные и нечетные страницы.
@@ -57,15 +65,17 @@
 \input{data}
 %
 \input{pereopr}
+
+%\input{вычисление}
 %
 %\input{sections/закл}
-%
-\input{sections/исследованиеДВС}  
+%\input{sections/исследованиеДВС}  
 %\input{sections/исследованиеКПП} 
 %\input{sections/rezensia}
 %\input{sections/pod}
 %\input{sections/tit}
 %\input{sections/ОСАГОстандартФакт}
+\input{sections/ОСАГОстандарт}
 %\input{sections/nteOSAGO}       
 %\input{sections/noOSAGOnoKACKO}   
 %\input{sections/противоправные}

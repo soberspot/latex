@@ -2,7 +2,7 @@
 \ProvidesPackage{stylefile}
 
 \usepackage{fontspec}   
-\usepackage{csvsimple}
+\usepackage{csvsimple} %% Чтение CSV файлов
 \usepackage{ragged2e}
 \usepackage{microtype}
 
@@ -23,7 +23,9 @@
 %\usepackage[no-math]{fontspec}
 %\usepackage{xltxtra}
 \usepackage{polyglossia}[indentfirst=true]
+\usepackage{minted}
 \setdefaultlanguage[spelling=modern]{russian}
+%\setmainlanguage[babelshorthands=true]{russian}
 \setotherlanguage{english}
 \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
 \setmainfont[Scale=1]{Times New Roman} % scale to 14bp
@@ -46,16 +48,10 @@
 %
 \usepackage{csquotes}
 %
-%
-
-%
-%
-%
 %\usepackage{subfigure}
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage[dvips]{graphicx}  % Для вставки рисунков
-\graphicspath{images/}  % папки с картинками
 \usepackage[leftcaption]{sidecap}
 %%% Работа с таблицами
 \usepackage{array,tabularx,tabulary,booktabs,longtable} % Дополнительная работа с таблицами
@@ -149,11 +145,11 @@ citestyle=gost-authoryear
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Переопределения
 \graphicspath{
-    {./images/jpg/}
-    {./images/pdf/}
-    {./images/png/}
-     {./foto/}
-}
+	{foto/}
+    {images/jpg/}
+    {images/pdf/}
+    {images/png/}
+     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{marginnote}
 \usepackage{emptypage}
@@ -164,6 +160,14 @@ citestyle=gost-authoryear
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
 \usepackage{pifont}
+
+%%%%%%%%%% 
+\usepackage{datatool}
+
+%%%%%%%%%%%% Альбомная ориентация страниц
+\usepackage{lscape}
+
+
 
 %%%%%%%%%%%%  ВОДЯНОЙ ЗНАК
 \usepackage{draftwatermark} 
