@@ -1,7 +1,32 @@
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lllll}
+		\toprule
+		\multirow{2}{*}[-1em]{Models} & \multicolumn{3}{c}{Metric 1} & Metric 2\\
+		\addlinespace[10pt]
+		\cmidrule(lr){2-4} \cmidrule(lr){5-5} \\
+		{} & precision & recall & F-score  & R@10 \\
+		\midrule
+		model 1 & 0.67  & 0.8 & 0.729  & 0.75 \\
+		model 2 & 0.8 & 0.9 & 0.847 & 0.85 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 
 
-\csvautotabular{test.csv}
+
+
+\begin{landscape}
+{\tiny	
+\csvautolongtable[separator=semicolon]{csv/avto.csv}
+}
+\end{landscape}
+
+
+
+
+%
 
 
 
@@ -10,6 +35,8 @@
 	\csvreader[head to column names]{test.csv}{}%
 %	
 	{\\\givenname\  \name & \matriculation \,  \matriculation}%
+	
+
 %	
 	\\\hline
 %	
@@ -17,15 +44,21 @@
 
 Или
 
-\begin{tabular}{|r|l|c|}\hline%
+
+\begin{longtable}{|p{10mm}|p{55mm}|p{40mm}|}\hline%
 п/п	& Заголовок любой & Любой\\\hline\hline
 	%
-	\csvreader[late after line=\\\hline]%
+
+	\csvreader[%separator=semicolon, 
+	late after line=\\\hline]%
 	%
 	{test.csv}{name=\name,givenname=\firstname,matriculation=\matnumber}%
 	%
 	{\thecsvrow & \firstname~\name & \matnumber}%
-\end{tabular}
+
+\end{longtable}
+
+
 
 Еще более удобный и предпочтительный способ создания таблицы - это установка соответствующих клавиш параметров. Обратите внимание, что это дает вам возможность создать стиль pgfkeys, который содержит создание всей таблицы.
 

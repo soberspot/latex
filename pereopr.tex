@@ -13,6 +13,14 @@
 \renewcommand{\geq}{\ensuremath{\geqslant}}
 \renewcommand{\emptyset}{\varnothing}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   ПРОИЗВОЛЬНЫЙ СЧЕТЧИК
+
+\newcounter{@nnn}  % задаём имя счёчика 
+\setcounter{@nnn}{0}  % устанавливаем его первое значение
+
+\newcommand{\z}[2]{\par\addtocounter{@nnn}{1}  % формируем комманду 
+	{\bf \arabic{@nnn}.   Работы по заказ-наряду  #1, произведеные на автомобиле #2:}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%  Подсчет строк в таблице
 \newcounter{rownum}
@@ -134,6 +142,10 @@
 
 \newcommand{\два}[2]{\small \Rownum  & {\small #1 }&  \small #2\\ \hline \toprule}
 
+%%% ПЕРЕОПРЕДЕЛЕНИЕ ДЛЯ ТАБЛИЦЫ с Индексом и Пятью Столбцами
+
+\newcommand{\пять}[5]{\small \Rownum  & \small #1 &  \small #2&\small #3&\small #4&\small #5\\ \hline \toprule}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\dee}{
 	% вертикальные промежутки:
@@ -225,6 +237,28 @@
         \caption{\small {#2}}
         \label{рис:#1}
     \end{figure}
+}
+
+
+
+\newcommand{\фотоб}[2]
+{
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.99\textwidth]{#1}}
+		\caption*{\small {#2}}
+		\label{рис:#1}
+	\end{figure}
+}
+
+
+
+\newcommand{\фот}[2]
+{
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.99\textwidth]{#1}}
+		\caption{\small {#2}}
+	%	\label{рис:#1}
+	\end{figure}
 }
 
 %%%%%%%%%%%%%%% ДВА РИСУНКА РЯДОМ            \дварядом{файл1}{подпись1}{файл2}{подпись2}

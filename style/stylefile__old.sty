@@ -1,14 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesPackage{stylefile}
 
-\RequirePackage{fontspec}   
-\RequirePackage{csvsimple} %% Чтение CSV файлов
-\RequirePackage{ragged2e}
-\RequirePackage{microtype}
+\usepackage{fontspec}   
+\usepackage{csvsimple}
+\usepackage{ragged2e}
+\usepackage{microtype}
 
 
 \justifying
-%\sloppy
+\sloppy
 \tolerance=500
 \hyphenpenalty=10000
 \emergencystretch=3em
@@ -23,9 +23,7 @@
 %\usepackage[no-math]{fontspec}
 %\usepackage{xltxtra}
 \usepackage{polyglossia}[indentfirst=true]
-\usepackage{minted}
 \setdefaultlanguage[spelling=modern]{russian}
-%\setmainlanguage[babelshorthands=true]{russian}
 \setotherlanguage{english}
 \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
 \setmainfont[Scale=1]{Times New Roman} % scale to 14bp
@@ -40,7 +38,6 @@
 \fi
 \usepackage{mathtools}                    
 \usepackage{amsmath}
-%\usepackage{unicode-math} 
 \usepackage{amssymb}  
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,15 +45,16 @@
 %
 \usepackage{csquotes}
 %
+%
 %\usepackage{subfigure}
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage[dvips]{graphicx}  % Для вставки рисунков
 \usepackage[leftcaption]{sidecap}
 %%% Работа с таблицами
-\usepackage{array,tabularx,tabulary,longtable} % Дополнительная работа с таблицами
-\RequirePackage{booktabs}
-\RequirePackage{multirow} % Слияние строк в таблице
+\usepackage{array,tabularx,tabulary,booktabs,longtable} % Дополнительная работа с таблицами
+%
+\usepackage{multirow} % Слияние строк в таблице
 %
 
 %%%% Программирование
@@ -69,7 +67,7 @@
 %
 \usepackage{geometry} % Простой способ задавать поля
 \geometry{top=20mm}
-\geometry{bottom=20mm}
+\geometry{bottom=25mm}
 \geometry{left=25mm}
 \geometry{right=20mm}
 \usepackage{setspace} % Интерлиньяж  
@@ -143,13 +141,10 @@ citestyle=gost-authoryear
 \DeclareCaptionLabelSeparator{tchk}{. }
 \captionsetup{justification=centering,labelsep=tchk}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Переопределения
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Папка с рисунком
 \graphicspath{
-	{foto/}}
-%    {images/jpg/}
-%    {images/pdf/}
-%    {images/png/}
-%     }
+	{./foto/}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{marginnote}
 \usepackage{emptypage}
@@ -161,14 +156,8 @@ citestyle=gost-authoryear
 \setlist[todolist]{label=$\square$}
 \usepackage{pifont}
 
-%%%%%%%%%% 
-\RequirePackage{datatool}
-
-%%%%%%%%%%%% Альбомная ориентация страниц
-\RequirePackage{lscape}
-
 %%%%%%%%%%%%  ВОДЯНОЙ ЗНАК
-\RequirePackage{draftwatermark} 
+%\usepackage{draftwatermark} 
 
 
 
